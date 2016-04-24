@@ -1,0 +1,115 @@
+<script>
+// var num = Number(prompt("Pick a number", "0"));
+
+// 	if (num < 10) {
+// 		alert("Small");
+// 	} else if (num < 100) {
+// 		alert("medium");
+// 	} else {
+// 		alert("super");
+// 	}
+
+//****
+
+// var number = 0;
+
+// while (number <= 12) {
+// 	console.log(number);
+// 	number += 2;
+// }
+
+//****
+// interesting way to do 2 to the 10th power
+
+// var result = 1;
+// var counter = 0;
+
+// while (counter < 10) {
+// 	result *= 2;
+// 	counter++
+// }
+
+// console.log(result);
+//****
+// and a for loop version
+
+// var result = 1;
+
+// for (var counter = 0 ; counter < 1 ; counter++) {
+// 	result *= 2;
+// }
+
+// console.log(result);
+
+// EXCERCISES
+// 1
+
+// var poundCount = 0;
+// var pound = "#"
+
+// while (poundCount < 7) {
+// 	console.log(pound);
+// 	poundCount++;
+// 	pound += "#";
+// }
+
+// 2
+
+// var count = 1;
+
+// while (count <= 100) {
+// 	if (count % 3 == 0 && count % 5 == 0) {
+// 		console.log("FizzBuzz");
+// 	} else if (count % 3 == 0) {
+// 		console.log("Fizz");
+// 	} else if (count % 5 == 0) {
+// 		console.log("Buzz");
+// 	}	else {
+// 		console.log(count);
+// 	}
+
+// 	count++;
+// }
+
+// 3
+var rowCount = 1;
+var heightCount = 1;
+var evenRow = 0;
+var oddRow = 0;
+var rowSize = 24;
+var heightSize = 8;
+var boardSpace = ""
+
+while (heightCount <= heightSize) {
+	if (heightCount % 2 != 0) {
+		while (rowCount <= rowSize) {
+			if (rowCount % 2 != 0) {
+				boardSpace += " #";
+			} else {
+				boardSpace += "||";
+			}
+			rowCount++;
+		}
+		console.log(boardSpace);
+	} else {
+		while (rowCount <= rowSize) {
+			if (rowCount % 2 == 0) {
+				boardSpace += "#";
+			} else {
+				boardSpace += "||";
+			}
+			rowCount++;
+		}
+		console.log(boardSpace);
+	}
+	heightCount++;
+	rowCount = 1;
+	boardSpace = "";
+}
+
+</script>
+
+
+
+
+
