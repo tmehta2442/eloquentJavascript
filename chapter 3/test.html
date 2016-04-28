@@ -1,13 +1,13 @@
 <script>
-//impressive
+impressive
 
-// var square = function(x) {
-// 	return x * x;
-// };
+var square = function(x) {
+	return x * x;
+};
 
-// console.log(square(12));
+console.log(square(12));
 
-// exponent
+exponent
 
 var power = function(base, exponent) {
 	var result = 1;
@@ -18,4 +18,181 @@ var power = function(base, exponent) {
 };
 
 console.log(power(2, 3));
+
+scope
+
+var x = "outside";
+var y = "outside";
+var z = "outside";
+
+var f1 = function() {
+	var x = "inside f1";
+	console.log("i am " + x);
+};
+
+
+
+var f2 = function() {
+	y = "inside f2";
+};
+f2();
+
+var f3 = function() {
+	var z = "outside";
+	var f4 = function(){
+		z = "inside f3";
+	};
+	f4();
+};
+
+
+f1();
+f2();
+f3();
+console.log(x);
+console.log(y);
+console.log(z);
+
+nested scopes
+
+var landscape = function() {
+	var result = "";
+	var flat = function(size) {
+		for (var count = 0; count < size; count++) {
+			result += "_";
+		}
+	};
+	var mountain = function(size) {
+		result += "/"
+		for (var count = 0; count < size; count++) {
+			result += "'";
+		}
+		result += "\\";
+	};
+
+	flat(3);
+	mountain(4);
+	flat(6);
+	mountain(1);
+	flat(1);
+	return result;
+};
+
+console.log(landscape());
+
+closure
+
+function multiplier(factor){
+	return function(number) {
+		return number * factor;
+	};
+}
+
+var twice = multiplier(2)
+console.log(twice(5));
+
+recursion
+function findsolution(target){
+	function find(start, history) {
+		if (start == target) {
+			return history;
+		} else if (start > target) {
+			return null;
+			//return find(start - 1, "(" + history + " - 1)")
+		} else {
+			return find(start + 5, "(" + history + " + 5)") ||
+						 find(start * 3, "(" + history + " * 3)");
+		}
+	}
+	return find(1, "1");
+}
+
+console.log(findsolution(24));
+
+
+function printFarmInventory(cow, chicken){
+	var invCowString = String(cow);
+	while (invCowString.length < 3) {
+		invCowString = "0" + invCowString;
+	}
+	console.log(invCowString);
+	var invChickenString = String(chicken);
+	while (invChickenString.length < 3) {
+		invChickenString = "0" + invChickenString;
+	}
+	console.log(invChickenString);
+}
+
+//printFarmInventory(7, 11);
+//above refactored
+function paddingInv(number) {
+	var numString = String(number)
+	while (numString.length < 3) {
+		numString = "0" + numString;
+	}
+	console.log(numString);
+}
+
+function farmAnimals(cow, goat, deer){
+	paddingInv(cow + " cows");
+	paddingInv(goat + " goats");
+	paddingInv(deer + " deers");
+}
+
+farmAnimals(4, 5, 6);
+
+Exercises
+function minNum(a, b){
+	if(a >= b) {
+		return a;
+	} else {
+		return b;
+	}
+}
+
+console.log(minNum(0, -10));
+
+
+function isEven(a){
+	if (a % 2 == 0) {
+		return true
+	} else {
+		return false
+	}
+}
+
+console.log(isEven(-11));
+
+
+function countBs(phrase){
+	var num = 0;
+	var bCount = 0;
+	var phraseLength = phrase.length;
+	for(phraseLength; phraseLength > 0; phraseLength--) {
+		if (phrase.charAt(num) == "B" ) {
+			bCount++;
+		}
+		num++;
+	}
+	return bCount;
+}
+
+console.log(countBs("ABCBDBBB"));
+
+function countChar(phrase, charActer){
+	var phraseLength = phrase.length;
+	var num = 0;
+	var counter = 0;
+	for(phraseLength; phraseLength > 0; phraseLength--){
+		if (phrase.charAt(num) == charActer) {
+			counter++
+		}
+		num++
+	}
+	return counter;
+}
+console.log(countChar("ABBBBNNN", "B"));
+
+
+
 </script>
