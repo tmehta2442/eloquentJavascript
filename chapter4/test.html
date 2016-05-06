@@ -160,7 +160,7 @@ function tableFor(event, journal) {
 	return table;
 }
 
-tableFor("pizza", JOURNAL);
+// console.log(tableFor("pizza", JOURNAL));
 // [76, 9, 4, 1]
 
 function phi(table) {
@@ -173,7 +173,24 @@ function phi(table) {
 
 // console.log(phi([76, 9, 4, 1]));
 
-console.log(phi(tableFor("weekend", JOURNAL)) );
+// console.log(phi(tableFor("pizza", JOURNAL)) );
+
+
+function parseData(journal){
+  var uniqueArr = [];
+  for(var i = 0; i < journal.length; i++) {
+    for (var j = 0; j < journal[i].events.length; j++) {       
+      if (uniqueArr.indexOf(journal[i].events[j]) === -1) {
+        uniqueArr.push(journal[i].events[j]);
+      }
+    }
+  }
+  return uniqueArr;
+}
+
+console.log(parseData(JOURNAL)); 
+
+
 
 
 
