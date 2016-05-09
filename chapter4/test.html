@@ -175,9 +175,9 @@ function phi(table) {
 
 // console.log(phi(tableFor("pizza", JOURNAL)) );
 
-
+var uniqueArr = [];
 function parseData(journal){
-  var uniqueArr = [];
+  
   for(var i = 0; i < journal.length; i++) {
     for (var j = 0; j < journal[i].events.length; j++) {       
       if (uniqueArr.indexOf(journal[i].events[j]) === -1) {
@@ -185,11 +185,16 @@ function parseData(journal){
       }
     }
   }
-  return uniqueArr;
 }
 
-console.log(parseData(JOURNAL)); 
+function eachPhi(){
+	for(var i = 0; i < uniqueArr.length; i++) {
+		console.log("The phi for " +uniqueArr[i] + " is " + phi(tableFor(uniqueArr[i], JOURNAL)) );
+	}
+} 
 
+parseData(JOURNAL);
+eachPhi();
 
 
 
