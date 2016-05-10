@@ -175,6 +175,7 @@
 
 // console.log(phi(tableFor("pizza", JOURNAL)) );
 
+<<<<<<< HEAD
 
 // function parseData(journal){
 //   var uniqueArr = [];
@@ -188,6 +189,28 @@
 //   }
 //   return uniqueArr;
 // }
+=======
+var uniqueArr = [];
+function parseData(journal){
+  
+  for(var i = 0; i < journal.length; i++) {
+    for (var j = 0; j < journal[i].events.length; j++) {       
+      if (uniqueArr.indexOf(journal[i].events[j]) === -1) {
+        uniqueArr.push(journal[i].events[j]);
+      }
+    }
+  }
+}
+
+function eachPhi(){
+	for(var i = 0; i < uniqueArr.length; i++) {
+		console.log("The phi for " +uniqueArr[i] + " is " + phi(tableFor(uniqueArr[i], JOURNAL)) );
+	}
+} 
+
+parseData(JOURNAL);
+eachPhi();
+>>>>>>> 3011a9b28e3b19309da4c80d27a34ddc9a472b4f
 
 // console.log(parseData(JOURNAL)); 
 
