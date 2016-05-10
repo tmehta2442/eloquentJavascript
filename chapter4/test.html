@@ -175,55 +175,47 @@
 
 // console.log(phi(tableFor("pizza", JOURNAL)) );
 
-<<<<<<< HEAD
-
+// var uniqueArr = [];
 // function parseData(journal){
-//   var uniqueArr = [];
+  
 //   for(var i = 0; i < journal.length; i++) {
 //     for (var j = 0; j < journal[i].events.length; j++) {       
 //       if (uniqueArr.indexOf(journal[i].events[j]) === -1) {
-//       	var phi = tableFor(journal[i].events[j], journal);
-//         uniqueArr.push(journal[i].events[j] + ": " + phi );
+//         uniqueArr.push(journal[i].events[j]);
 //       }
 //     }
 //   }
-//   return uniqueArr;
 // }
-=======
-var uniqueArr = [];
-function parseData(journal){
-  
-  for(var i = 0; i < journal.length; i++) {
-    for (var j = 0; j < journal[i].events.length; j++) {       
-      if (uniqueArr.indexOf(journal[i].events[j]) === -1) {
-        uniqueArr.push(journal[i].events[j]);
-      }
-    }
-  }
-}
 
-function eachPhi(){
-	for(var i = 0; i < uniqueArr.length; i++) {
-		console.log("The phi for " +uniqueArr[i] + " is " + phi(tableFor(uniqueArr[i], JOURNAL)) );
-	}
-} 
+// function eachPhi(){
+// 	for(var i = 0; i < uniqueArr.length; i++) {
+// 		console.log("The phi for " +uniqueArr[i] + " is " + phi(tableFor(uniqueArr[i], JOURNAL)) );
+// 	}
+// } 
 
-parseData(JOURNAL);
-eachPhi();
->>>>>>> 3011a9b28e3b19309da4c80d27a34ddc9a472b4f
+// parseData(JOURNAL);
+// eachPhi();
 
 // console.log(parseData(JOURNAL)); 
 
-function remove(array, index) {
-	return array.slice(0, index).concat(array.slice(index + 1));
+// function remove(array, index) {
+// 	return array.slice(0, index).concat(array.slice(index + 1));
 	
+// }
+
+// console.log(remove(["a", "b", "c", "d", "e"], 2));
+
+
+//exercise 2a
+function reverseArray(arr){
+	newArray = [];
+	for(var i = 0; i < arr.length; i++){
+		newArray.unshift(arr[i]);
+	}
+	return newArray;
 }
 
-console.log(remove(["a", "b", "c", "d", "e"], 2));
-
-
-
-
+console.log(reverseArray([1, 2, 3, 4, 5]));
 
 
 
