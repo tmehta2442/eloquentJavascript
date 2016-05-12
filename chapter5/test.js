@@ -1,3 +1,15 @@
+// function noisy(f) {
+//   return function(arg) {
+//     console.log("calling with ", arg);
+//     var val = f(arg);
+//     console.log("called with ", arg, "- got ", val);
+//     return val;
+//   };
+// }
+
+// noisy(Boolean)(1);
+
+
 var ANCESTRY_FILE = "[\n  " + [
   '{"name": "Carolus Haverbeke", "sex": "m", "born": 1832, "died": 1905, "father": "Carel Haverbeke", "mother": "Maria van Brussel"}',
   '{"name": "Emma de Milliano", "sex": "f", "born": 1876, "died": 1956, "father": "Petrus de Milliano", "mother": "Sophia van Damme"}',
@@ -42,20 +54,78 @@ var ANCESTRY_FILE = "[\n  " + [
 
 var ancestry = JSON.parse(ANCESTRY_FILE);
 
-function filter(array, test) {
-  var passed = [];
-  for (var i = 0; i < array.length; i++) {
-    if(test(array[i])) {
-      passed.push(array[i]);
-    }
-  }
-  console.log(passed);
-  return passed;
-}
 
-console.log(filter(ancestry, function(person) { 
-  return person.born > 1900 && person.born < 1925;
+
+
+// function filter(array, test) {
+//   var passed = [];
+//   for (var i = 0; i < array.length; i++) {
+//     if(test(array[i])) {
+//       passed.push(array[i]);
+//     }
+//   }
+//   console.log(passed);
+//   return passed;
+// }
+
+// console.log(filter(ancestry, function(person) { 
+//   return person.born > 1900 && person.born < 1925;
+//   }));
+
+
+// function mapE(array, transform) {
+//   var mapped = [];
+//   for(var i = 0; i < array.length; i++) {
+//     mapped.push(transform(array[i]));
+//   }
+//   return mapped
+// }
+
+// function timesTwo(number){
+//   return number * 2;
+// }
+
+// console.log(mapE([1, 2, 3, 4], timesTwo));
+
+// var array = [1, 2, 3, 4, 5];
+
+// var double = array.map(function(num) {
+//   return num * 2;
+// });
+
+// console.log(double);
+
+
+
+
+
+// console.log(array.reduce(function(a, b) {
+//   return a + b;
+// }));
+
+
+//exercises
+
+var array = [[1, 2, 3], [4, 5], [6]];
+
+console.log([[1, 2, 3], [4, 5], [6]].reduce(function(a, b) {
+    return a.concat(b);
   }));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
