@@ -108,13 +108,48 @@ var ancestry = JSON.parse(ANCESTRY_FILE);
 
 var array = [[1, 2, 3], [4, 5], [6]];
 
-console.log([[1, 2, 3], [4, 5], [6]].reduce(function(a, b) {
-    return a.concat(b);
-  }));
+// var newArray = [];
+
+// for (var i = 0; i < array.length; i++) {
+//   for (var j = 0; j < array[i].length; j++) {
+//     newArray.push(array[i][j]);
+//   }
+// }
+
+// console.log(newArray);
 
 
+// var total = 0;
+// var numbers = [1, 5, 7, 3, 8, 9];
+// for ( var i = 0; i < numbers.length; i++ ){
+//     total += numbers[i];
+// }
 
+// console.log(total);
 
+// function nameFind(){
+//   var holding = 0
+//   var total = 0;
+//   var ageAverage = 0;
+//   for (var i = 0; i < ancestry.length; i++) {
+//     for (var j = 0; j < ancestry.length; j++) {
+//       if (ancestry[i].name == ancestry[j].mother) {
+//         holding += (ancestry[j].born - ancestry[i].born);
+//         total++;
+//       }
+//     }
+//   }
+//   ageAverage = (holding / total);
+//   console.log(ageAverage);
+// }
+
+// nameFind();
+
+// 2b
+
+function lifeExp(){
+  
+}
 
 
 
