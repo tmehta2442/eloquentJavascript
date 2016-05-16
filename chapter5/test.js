@@ -53,8 +53,40 @@ var ANCESTRY_FILE = "[\n  " + [
 ].join(",\n  ") + "\n]";
 
 var ancestry = JSON.parse(ANCESTRY_FILE);
+var holdingArray = [];
+var counter = 0;
+var totalAge = 0;
+var placer = [];
 
+function lifeExp(){ 
+  for (var i = 0; i < ancestry.length; i++){
+    holdingArray.push({cent: Math.ceil(ancestry[i].died / 100), ageDead: ancestry[i].died - ancestry[i].born})
+  }
+  return holdingArray;
+}
 
+function sortAndShow(){
+  
+  for (var l = 0; l < holdingArray.length; l++) {
+    for (var j = 0; j < holdingArray.length; j++) {
+      if (holdingArray[j] != undefined && holdingArray[l] != undefined 
+        && holdingArray[l].cent == 20) {
+       
+        counter++;
+        console.log(counter);
+        delete holdingArray[j];
+ 
+      }
+      
+
+    }
+    delete holdingArray[l];
+
+  }
+}
+
+lifeExp();
+sortAndShow()
 
 
 // function filter(array, test) {
@@ -147,31 +179,30 @@ var array = [[1, 2, 3], [4, 5], [6]];
 
 // 2b
 // this is a mess... 
-function lifeExp(){
-  var holding = [];
-  for (var i = 0; i < ancestry.length; i++) {
-    holding.push({centDead: Math.ceil(ancestry[i].died/100), age: ancestry[i].died - ancestry[i].born });
-  }
-  for (var j = 0; j < holding.length; j++) {
-    var ageCount = 0
-    var totalAges = 0
-    var anotherHolder = []
-    for (var k = 0; k < holding.length; k++) {
-      for (var l = 0; l < anotherHolder.length; l++) {
-        if (holding[j].centDead == holding[k].centDead && holding[k].centDead != anotherHolder[l].centDead) {
-          totalAges = holding[j].age;
-          ageCount++;
-          totalAges += holding[k].age;
-          anotherHolder.push({centDead: holding[j].centDead, ageAverage: totalAges/ageCount })
-        }
-      }
-    }
-    console.log(anotherHolder);
-  }
-}
+// function lifeExp(){
+//   var holding = [];
+//   for (var i = 0; i < ancestry.length; i++) {
+//     holding.push({centDead: Math.ceil(ancestry[i].died/100), age: ancestry[i].died - ancestry[i].born });
+//   }
+//   for (var j = 0; j < holding.length; j++) {
+//     var ageCount = 0
+//     var totalAges = 0
+//     var anotherHolder = []
+//     for (var k = 0; k < holding.length; k++) {
+//       for (var l = 0; l < anotherHolder.length; l++) {
+//         if (holding[j].centDead == holding[k].centDead && holding[k].centDead != anotherHolder[l].centDead) {
+//           totalAges = holding[j].age;
+//           ageCount++;
+//           totalAges += holding[k].age;
+//           anotherHolder.push({centDead: holding[j].centDead, ageAverage: totalAges/ageCount })
+//         }
+//       }
+//     }
+//     console.log(anotherHolder);
+//   }
+// }
 
-lifeExp();
-
+// lifeExp();
 
 
 
