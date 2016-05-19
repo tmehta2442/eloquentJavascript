@@ -52,46 +52,46 @@
 //   '{"name": "Jacobus Bernardus van Brussel", "sex": "m", "born": 1736, "died": 1809, "father": "Jan van Brussel", "mother": "Elisabeth Haverbeke"}'
 // ].join(",\n  ") + "\n]";
 
-// var ancestry = JSON.parse(ANCESTRY_FILE);
-// var holdingArray = [];
-// var counter = 0;
-// var totalAge = 0;
-// var placer = [];
-// var tester = 21;
+var ancestry = JSON.parse(ANCESTRY_FILE);
+var holdingArray = [];
+var counter = 0;
+var totalAge = 0;
+var placer = [];
+var tester = 21;
 
-// function lifeExp(){ 
-//   for (var i = 0; i < ancestry.length; i++){
-//     holdingArray.push({cent: Math.ceil(ancestry[i].died / 100), 
-//                        ageDead: ancestry[i].died - ancestry[i].born})
-//   }
-//   return holdingArray;
-// }
+function lifeExp(){ 
+  for (var i = 0; i < ancestry.length; i++){
+    holdingArray.push({cent: Math.ceil(ancestry[i].died / 100), 
+                       ageDead: ancestry[i].died - ancestry[i].born})
+  }
+  return holdingArray;
+}
 
-// function sortAndShow(qweqwe){
-//   for (var l = 0; l < holdingArray.length; l++) {
-//     for (var j = 0; j < holdingArray.length; j++) {
-//       if (holdingArray[j] != undefined && holdingArray[l] != undefined 
-//         && holdingArray[l].cent == qweqwe) {
+function sortAndShow(qweqwe){
+  for (var l = 0; l < holdingArray.length; l++) {
+    for (var j = 0; j < holdingArray.length; j++) {
+      if (holdingArray[j] != undefined && holdingArray[l] != undefined 
+        && holdingArray[l].cent == qweqwe) {
         
-//         totalAge += holdingArray[j].ageDead
-//         counter++;
-//         delete holdingArray[j];
-//       }
-//     }
-//     delete holdingArray[l];
-//   }
-//   placer.push({cent: qweqwe, avgAge: totalAge / counter});
-// }
+        totalAge += holdingArray[j].ageDead
+        counter++;
+        delete holdingArray[j];
+      }
+    }
+    delete holdingArray[l];
+  }
+  placer.push({cent: qweqwe, avgAge: totalAge / counter});
+}
 
-// function numNum(){
-//   for (var x = 16; x <= tester; x++) {
-//     sortAndShow(x);
-//   }
-// }
+function numNum(){
+  for (var x = 16; x <= tester; x++) {
+    sortAndShow(x);
+  }
+}
 
-// lifeExp();
-// numNum();
-// console.log(placer);
+lifeExp();
+numNum();
+console.log(placer);
 
 // //sortAndShow(16);
 
