@@ -41,6 +41,20 @@ var ANCESTRY_FILE = "[\n  " + [
 ].join(",\n  ") + "\n]";
 
 var ancestry = JSON.parse(ANCESTRY_FILE);
+// compostability 
+
+// var min = ancestry[0];
+// for (var i = 1; i < ancestry.length; i++) {
+// 	var cur = ancestry[i];
+// 	if (cur.born < min.born) {
+// 		min = cur;
+// 	}
+// }
+
+// console.log(min);
+
+
+
 
 // function filter(array, test){
 // 	var passed = [];
@@ -98,6 +112,15 @@ var ancestry = JSON.parse(ANCESTRY_FILE);
 
 
 // console.log(test().reduce(function(a, b){ return a + b; }));	
+
+// console.log(ancestry.reduce(function(min, cur) {
+// 	if (cur.born == 1705) {
+// 		return cur;
+// 	} else {
+// 		return min;
+// 	}
+// }));
+
 
 // var numbers = [1, 2, 3, 4, 5];
 // var sum = [];
