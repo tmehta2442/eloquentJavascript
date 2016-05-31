@@ -52,22 +52,38 @@ var ancestry = JSON.parse(ANCESTRY_FILE);
 // }
 
 // console.log(min);
+// binding
 
-//composability
+var theSet = ["Carel Haverbeke", "Maria van Brussel", "Donald Duck"];
 
-function average(array) {
-	function plus(a, b) {
-		return a + b;
-	}
-	return array.reduce(plus) / array.length;
+function isInSet(set, person) {
+	return set.indexOf(person.name) > -1;
 }
 
-function age(p) { return p.died - p.born; }
-function male(p) { return p.sex == "m"; }
-function female(p) { return p.sex == "f"; }
+// console.log(ancestry.filter(function(person) {
+// 	return isInSet(theSet, person);
+// }));
 
-console.log(average(ancestry.filter(male).map(age)));
-console.log(average(ancestry.filter(female).map(age)));
+console.log(ancestry.bind(null, theSet));
+
+
+// function average(array) {
+// 	function plus(a, b) {
+// 		return a + b;
+// 	}
+// 	return array.reduce(plus) / array.length;
+// }
+
+// function age(p) { return p.died - p.born; }
+// function male(p) { return p.sex == "m"; }
+// function female(p) { return p.sex == "f"; }
+
+// console.log()
+
+// console.log(average(ancestry.map(age)));
+// console.log(ancestry.filter(male));
+// console.log(average(ancestry.filter(male).map(age)));
+// console.log(average(ancestry.filter(female).map(age)));
 
 
 // function filter(array, test){
@@ -101,6 +117,7 @@ console.log(average(ancestry.filter(female).map(age)));
 // 	return person.died - person.born > 90;
 // });
 
+// console.log(overNinety);
 // console.log(overNinety.map(function(person) {
 // 	return person.name;
 // }));
